@@ -8,16 +8,16 @@ seed를 바꿔 가며 반복 실행하고, 결과를 data/benchmark_runs.csv에 
 - load  : 출력에 부하 저항 20 kΩ 연결 (한계 검증: AI의 대리모델 형태와
           실제 관계가 어긋날 때도 동작하는지 확인)
 
-실행:  python benchmark.py            (기본 30회 반복)
-       python benchmark.py --seeds 10 (빠르게 확인)
+실행:  python -m core.benchmark            (기본 30회 반복)
+       python -m core.benchmark --seeds 10 (빠르게 확인)
 """
 import argparse
 import os
 
 import pandas as pd
 
-from circuit import capacitor_candidates, error_rate, resistor_candidates
-from search import METHODS, search, simulate
+from core.circuit import capacitor_candidates, error_rate, resistor_candidates
+from core.search import METHODS, search, simulate
 
 # 목표 시나리오 10개: 실습·응용에서 자주 쓰는 저역통과 차단주파수
 SCENARIOS = [
@@ -37,7 +37,8 @@ TOLERANCE = 2.0
 MAX_TRIALS = 20
 CONDITIONS = {"ideal": None, "load": 20e3}
 CONDITION_LABELS = {"ideal": "이상적 RC (무부하)", "load": "부하 20 kΩ 연결 (한계 검증)"}
-DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "benchmark_runs.csv")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_PATH = os.path.join(ROOT, "data", "benchmark_runs.csv")
 
 
 def answer_key(rs, cs, target, load_r):

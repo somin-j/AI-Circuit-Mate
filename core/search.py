@@ -21,7 +21,7 @@ import numpy as np
 import optuna
 from optuna.distributions import CategoricalDistribution
 
-from circuit import cutoff_frequency, error_rate
+from core.circuit import cutoff_frequency, error_rate
 
 optuna.logging.set_verbosity(optuna.logging.WARNING)
 
@@ -263,7 +263,7 @@ def search(method, target_fc, tolerance, max_trials, rs, cs, seed=42, load_r=Non
 
 
 if __name__ == "__main__":
-    from circuit import capacitor_candidates, fmt_si, resistor_candidates
+    from core.circuit import capacitor_candidates, fmt_si, resistor_candidates
 
     rs, cs = resistor_candidates(), capacitor_candidates()
     for m, name in METHODS.items():

@@ -1,8 +1,8 @@
 import pytest
 
-from benchmark import SCENARIOS
-from circuit import capacitor_candidates, resistor_candidates
-from search import METHODS, search
+from core.benchmark import SCENARIOS
+from core.circuit import capacitor_candidates, resistor_candidates
+from core.search import METHODS, search
 
 RS, CS = resistor_candidates(), capacitor_candidates()
 

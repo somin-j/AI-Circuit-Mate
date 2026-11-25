@@ -1,6 +1,6 @@
 import math
 
-from circuit import (brute_force, capacitor_candidates, cutoff_frequency, error_rate, fmt_si,
+from core.circuit import (brute_force, capacitor_candidates, cutoff_frequency, error_rate, fmt_si,
                      gain_db, resistor_candidates)
 
 

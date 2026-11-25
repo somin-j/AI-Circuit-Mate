@@ -4,8 +4,8 @@ import math
 import numpy as np
 import plotly.graph_objects as go
 
-from circuit import error_rate, fmt_si, gain_db
-from search import METHODS, simulate
+from core.circuit import error_rate, fmt_si, gain_db
+from core.search import METHODS, simulate
 
 COLORS = {"ai": "#0A6CF0", "tpe": "#E8890C", "random": "#8E8E93"}
 TOL_COLOR = "#E5484D"
