@@ -26,7 +26,6 @@ streamlit run app.py
 
 | 페이지 | 내용 |
 |---|---|
-| 소개 | 대상과 문제 정의, 사용 방법, 검증된 효과 요약 |
 | AI 탐색 | ① 목표 설정 → ② AI 탐색 진행(실시간) → ③ 탐색 결과(추천 R·C, 추천 이유, 오차 그래프, 탐색 공간 지도, 주파수 응답, CSV 저장), 세 방법 비교 실행 |
 | 검증 결과 | 10개 목표 시나리오 × 30회 반복 실험 결과, 한계 검증(부하 저항 조건), 결과 해석 |
 | AI 작동 원리 | AI의 입력·판단·출력, 라이브러리와 직접 구현 범위, 예선 이후 바뀐 점, 예상 질문, 한계 |
@@ -73,8 +72,7 @@ ui/                     여러 페이지가 함께 쓰는 화면 부품
     result.py           ③ 탐색 결과
     compare.py          세 방법 비교 결과
 views/                  페이지 (파일 하나 = 페이지 하나)
-  home_page.py          소개
-  search_page.py        AI 탐색
+  search_page.py        AI 탐색 (첫 화면)
   validation_page.py    검증 결과
   how_page.py           AI 작동 원리
 data/benchmark_runs.csv 검증 실험 결과
