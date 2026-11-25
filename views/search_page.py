@@ -10,7 +10,9 @@ from ui.search.settings import candidates, settings_panel
 
 
 def page_search():
-    st.title("AI 소자값 탐색")
+    st.title("[AI Circuit Mate]")
+    st.caption("목표 성능에 맞는 RC 저역통과필터 소자값을 AI로 탐색합니다. "
+               "AI는 이전 실험 결과로 소자값과 차단주파수의 관계를 학습해 다음 후보를 고릅니다.")
     left, right = st.columns([1, 2], gap="large")
     with left:
         cfg, start, compare = settings_panel()
